@@ -19,6 +19,7 @@ mix.ts("src/js/utils/lazysizes-wrapper.ts", "public/js")
 
 mix.postCss("src/css/app.css", "public/css")
 
+mix.copyDirectory('static/**', 'public')
 mix.copyDirectory('src/img/**', 'public/img')
 
 mix.criticalCss({
@@ -35,7 +36,6 @@ mix.criticalCss({
     minify: true,
   },
 });
-
 
 if (!mix.inProduction()) {
   mix.sourceMaps();
