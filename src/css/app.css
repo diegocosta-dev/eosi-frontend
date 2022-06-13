@@ -5,8 +5,8 @@
  *
  * @Author: webrgp
  * @Date: 2022-04-28 16:07:33
- * @Last Modified by:   webrgp
- * @Last Modified time: 2022-04-28 16:07:33
+ * @Last Modified by: webrgp
+ * @Last Modified time: 2022-06-13 12:04:54
  *
  */
 
@@ -15,13 +15,13 @@
 * Normalize.css and some additional base styles.
 */
 
-@import 'tailwindcss/base';
+@import "tailwindcss/base";
 
 /**
  * This injects any component classes registered by plugins.
  *
  */
-@import 'tailwindcss/components';
+@import "tailwindcss/components";
 
 /**
  * Here we add custom component classes; stuff we want loaded
@@ -29,25 +29,25 @@
  * override them.
  *
  */
-@import './components/webfonts.css';
-@import './components/typography.css';
-@import './components/global.css';
+@import "./components/webfonts.css";
+@import "./components/typography.css";
+@import "./components/global.css";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
  *
  */
-@import 'tailwindcss/utilities';
+@import "tailwindcss/utilities";
 
 /**
  * Include styles for individual pages
  *
  */
-@import './pages/home.css';
+@import "./pages/home.css";
 
 /**
  * Include vendor css.
  *
  */
-@import 'vendor.css';
+@import "vendor.css";

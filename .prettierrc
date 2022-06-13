@@ -5,5 +5,16 @@
   "semi": false,
   "trailingComma": "none",
   "printWidth": 80,
-  "arrowParens": "avoid"
+  "twigPrintWidth": 80,
+  "twigAlwaysBreakObjects": false,
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "*.css",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ],
+  "plugins": ["./node_modules/prettier-plugin-twig-melody"]
 }
