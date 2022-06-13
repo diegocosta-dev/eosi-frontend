@@ -6,14 +6,53 @@
  * @Author: webrgp
  * @Date: 2022-04-28 16:07:33
  * @Last Modified by: webrgp
- * @Last Modified time: 2022-06-13 12:14:17
+ * @Last Modified time: 2022-06-13 19:09:06
  *
  */
 
 * {
   @apply antialiased;
+}
 
-  &:focus {
-    outline: none;
+@layer components {
+  .redactor {
+    /* Base style reset */
+    @apply text-base;
+  }
+
+  .anchor,
+  .redactor a {
+  }
+
+  .h1,
+  .redactor h1 {
+  }
+
+  .h2,
+  .redactor h2 {
+  }
+
+  .h3,
+  .redactor h3 {
+  }
+
+  .h4,
+  .redactor h4 {
+  }
+
+  .h5,
+  .redactor h5 {
+  }
+
+  .p,
+  .redactor p {
+  }
+
+  .ul,
+  .redactor ul {
+  }
+
+  .ol,
+  .redactor ol {
   }
 }

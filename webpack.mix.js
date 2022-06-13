@@ -4,26 +4,25 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 require('@webrgp/laravel-mix-twig')
 require('laravel-mix-criticalcss')
 
-
 mix.disableSuccessNotifications()
 mix.setPublicPath('public')
 mix.version()
-mix.extract(['lazysizes']);
+mix.extract(['lazysizes'])
 mix.options({
   legacyNodePolyfills: true
-});
+})
 
-mix.twig("src/templates", "public", {
+mix.twig('src/templates', 'public', {
   format: mix.inProduction() ? 'minify' : 'pretty'
 })
 
-mix.ts("src/js/app.ts", "js")
-mix.ts("src/js/utils/lazysizes-wrapper.ts", "js")
+mix.ts('src/js/app.ts', 'js')
+mix.ts('src/js/utils/lazysizes-wrapper.ts', 'js')
 
-mix.postCss("src/css/app.css", "css")
+mix.postCss('src/css/app.css', 'css')
 
+mix.copyDirectory('src/img/**', 'public/img')
 mix.copyDirectory('static/**', 'public')
-mix.copyDirectory('src/img/**', 'img')
 
 mix.criticalCss({
   enabled: false,
@@ -32,16 +31,14 @@ mix.criticalCss({
     templates: './public/_criticalcss/',
     suffix: '_critical.min'
   },
-  urls: [
-    { url: '/', template: 'index' },
-  ],
+  urls: [{ url: '/', template: 'index' }],
   options: {
-    minify: true,
-  },
-});
+    minify: true
+  }
+})
 
 if (!mix.inProduction()) {
-  mix.sourceMaps();
+  mix.sourceMaps()
   mix.webpackConfig(() => {
     return {
       plugins: [
@@ -57,6 +54,6 @@ if (!mix.inProduction()) {
           }
         })
       ]
-    };
-  });
+    }
+  })
 }

@@ -8,7 +8,7 @@
     "dev": "npm-run-all clean --parallel dev:*",
     "build:mix": "cross-env NODE_ENV=production npx mix --production",
     "build": "npm-run-all clean build:*",
-    "lint": "npm run lint:ts && npm run lint:js && npm run lint:css",
+    "lint": "npm run lint:ts && npm run lint:js",
     "lint:ts": "tsc --noEmit",
     "lint:js": "eslint './src/js/*.{js,ts}' --fix"
   },
