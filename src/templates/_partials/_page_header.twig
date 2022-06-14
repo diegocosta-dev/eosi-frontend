@@ -1,0 +1,15 @@
+{% if title is defined and title %}
+
+<div>
+
+  <h1>{{ title }}</h1>
+
+  {% if intro is defined and intro %}
+    <div>
+      {{ intro }}
+    </div>
+  {% endif %}
+
+</div>
+
+{% endif %}
