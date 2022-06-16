@@ -1,0 +1,13 @@
+@layer components {
+  .btn-base {
+    @apply transition-colors inline-flex justify-center items-center font-bold text-base leading-[18px] py-[calc(1.5rem-2px)] px-[calc(2.25rem-2px)] rounded-full border;
+  }
+
+  .btn-solid {
+    @apply btn-base border-secondary bg-secondary text-white hover:bg-secondary/90 hover:border-secondary/90;
+  }
+
+  .btn-outline {
+    @apply btn-base text-secondary border-secondary hover:bg-secondary hover:text-white;
+  }
+}

@@ -29,9 +29,13 @@
  * override them.
  *
  */
+@import "./components/global.css";
 @import "./components/webfonts.css";
 @import "./components/typography.css";
-@import "./components/global.css";
+@import "./components/buttons.css";
+@import "./components/hamburger.css";
+@import "./components/site-navigation.css";
+@import "./components/icons.css";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

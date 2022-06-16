@@ -1,7 +1,76 @@
-<header id="site-header">
-  <div class="bg-white">
-    <h2>
-      site-header
-    </h2>
+{% set links = [
+  {
+    text: 'MicroC® Products',
+    children: [
+      {text: 'Why Choose MicroC®?', link: '#'},
+      {text: 'MicroC® 1000', link: '#'},
+      {text: 'MicroC® 1000',link: '#'},
+      {text: 'MicroC® 1000', link: '#'},
+    ]
+  },
+  {
+    text: 'Nitrack® Services'
+  },
+  {
+    text: 'Contaminants Treated',
+    children: [
+      {text: 'Industrial', link: '#'},
+      {text: 'Municipal', link: '#'},
+      {text: 'Drinking Water', link: '#'},
+      {text: 'Groundwater Remediation', link: '#'},
+    ]
+  },
+  {
+    text: 'Customers Served',
+    children: [
+      {text: 'Nitrogen', link: '#'},
+      {text: 'Phosphorus', link: '#'},
+      {text: 'BOD Addition', link: '#'},
+      {text: 'Selenium', link: '#'},
+    ]
+  },
+  {
+    text: 'Why EOSi?',
+  }
+] %}
+
+<header id='site-header'>
+  <div class='bg-white'>
+    <div class='flex flex-col xl:flex-row gap-[30px] max-w-screen-desktop mx-auto px-[15px] py-[30px] xl:justify-between'>
+      <div class='flex items-center justify-between'>
+        <div>
+          <a href='/'>
+            {% include '/_partials/_logo.svg.twig' %}
+          </a>
+        </div>
+        <div class='xl:hidden'>
+          <button id='hamburger-menu-button'
+          class='hamburger'
+          type='button'
+          aria-label='Menu'
+          data-toggle-control='site-navigation'
+          aria-expanded='false'>
+            <span class='hamburger-box'>
+              <span class='hamburger-inner'></span>
+            </span>
+            <span class="sr-only">Menu</span>
+          </button>
+        </div>
+      </div>
+      <div id='site-navigation' class='xl:flex xl:items-center active'>
+        <ul class='flex flex-col gap-[14px] p-[10px] xl:flex-row xl:justify-between xl:items-center xl:gap-[28px]'>
+          {% for item in links %}
+            {% include "_partials/_nav_links.twig" with {
+              item: item
+            } %}
+          {% endfor %}
+          <li>
+            <a href="#" class='flex btn-solid'>
+              Schedule a Call
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </header>
