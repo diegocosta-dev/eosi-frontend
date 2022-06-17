@@ -2,11 +2,12 @@
 {#
   This is the layout template that is inherited by pages and other layouts.
 #}
-{% extends "_boilerplate/_base_html_layout.twig" %}
+{% extends '_boilerplate/_base_html_layout.twig' %}
 
 {# -- Any <meta> tags that should be included in the <head> #}
 {% block headMeta %}
-{% endblock headMeta %}
+
+{% endblock %}
 
 {# -- Any <link> tags that should be included in the <head> #}
 {% block headLinks %}
@@ -14,45 +15,49 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="/manifest.webmanifest" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet" />
 
-  <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-{% endblock headLinks %}
+  <link rel="stylesheet" href="{{ mix('/css/app.css') }}" />
+{% endblock %}
 
 {# -- Any CSS that should be included before </head> -- #}
 {% block headCss %}
-{% endblock headCss %}
+
+{% endblock %}
 
 {# -- Page body -- #}
 {% block bodyHtml %}
+  {% include '_partials/_svg_symbols.svg.twig' %}
   <div id="page-container" class="overflow-hidden leading-tight">
     <div id="component-container"></div>
     <div id="content-container">
-
       {# -- Info header, including _navbar.twig -- #}
-      {% block siteHeader %}{% endblock %}
+      {% block siteHeader %}
+      {% endblock %}
 
       <main>
         {# -- Primary content block -- #}
         {% block content %}
+
         {% endblock %}
       </main>
     </div>
 
     {# -- Info footer -- #}
-    {% block siteFooter %}{% endblock %}
+    {% block siteFooter %}
+    {% endblock %}
 
     {# -- HTML Footer -- #}
-    {% include "_partials/_global_footer.twig" %}
+    {% include '_partials/_global_footer.twig' %}
   </div>
-{% endblock bodyHtml %}
-
+{% endblock %}
 
 {# -- Any JavaScript that should be included before </body> -- #}
 {% block bodyJs %}
-<script src="{{ mix('/js/manifest.js') }}"></script>
-<script src="{{ mix('/js/vendor.js') }}"></script>
-<script src="{{ mix('/js/app.js') }}"></script>
-{% endblock bodyJs %}
+  <script src="{{ mix('/js/manifest.js') }}"></script>
+  <script src="{{ mix('/js/vendor.js') }}"></script>
+  <script src="{{ mix('/js/app.js') }}"></script>
+{% endblock %}

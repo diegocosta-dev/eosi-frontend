@@ -28,7 +28,6 @@
     if (_targetEl) {
       if (active) {
         return _targetEl.classList.add('active')
-
       }
       return _targetEl.classList.remove('active')
     }
@@ -49,8 +48,8 @@
    * It updates the state of the button and the target
    */
   const updateState = () => {
-    updateButtonState()
     updateTargetState()
+    updateButtonState()
   }
 
   /**

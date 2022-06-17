@@ -1,9 +1,19 @@
 @layer components {
   #site-navigation {
-    @apply transition-all duration-300 ease-in-out overflow-hidden h-auto max-h-0 xl:max-h-max;
-  
+    @apply transition-all duration-300 ease-in-out overflow-hidden max-h-0 xl:overflow-visible;
+
+    @apply xl:max-h-max xl:flex xl:items-center;
+
     &.active {
-      @apply max-h-full xl:max-h-fit;
+      @apply max-h-[1000px];
+    }
+  }
+
+  [id^="nav-panel-"] {
+    @apply transition-all duration-300 ease-in-out overflow-hidden max-h-0 xl:absolute xl:top-full;
+
+    &.active {
+      @apply max-h-[250px];
     }
   }
 }
