@@ -69,10 +69,10 @@
                     <span class="arrow-down-icon"></span>
                   </button>
                   <div id="nav-panel-{{ loop.index }}">
-                    <ul class="flex-col mt-[10px] bg-white rounded-b-md xl:shadow-nav-menu xl:pb-[10px] xl:pl-[10px] xl:pr-[20px]"> <!-- Active on clink -->
+                    <ul class="flex-col mt-[10px] bg-white xl:rounded-b-md xl:shadow-nav-menu xl:pb-[10px] xl:pl-[10px] xl:pr-[20px] border-l-[1px] border-l-blue-300 xl:border-none"> <!-- Active on clink -->
                       {% for child in item.children %}
-                        <li class="p-[10px] font-normal text-[18px] leading-[25px] text-blue-700 border-l-[1px] border-l-blue-300 xl:border-none xl:text-[16px] xl:leading-[18px] xl:text-gray-900">
-                          <a class="xl:whitespace-nowrap" href={{child.link}}>{{child.text}}</a>
+                        <li class="">
+                          <a class="block p-[10px] font-normal text-[18px] leading-[25px] text-blue-700 xl:whitespace-nowrap xl:text-[16px] xl:leading-[18px] xl:text-gray-900" href={{child.link}}>{{child.text}}</a>
                         </li>
                       {% endfor %}
                     </ul>
