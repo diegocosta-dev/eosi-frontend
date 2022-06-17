@@ -1,6 +1,11 @@
 @layer components {
   .btn-base {
-    @apply transition-colors inline-flex justify-center items-center font-bold text-base leading-[18px] py-[calc(1.5rem-2px)] px-[calc(2.25rem-2px)] rounded-full border;
+    @apply text-center transition-colors inline-flex justify-center items-center font-bold text-base leading-[18px]
+    whitespace-nowrap
+    py-[calc(1.5rem-2px)]
+    px-[calc(2.25rem-2px)]
+    rounded-full
+    border;
   }
 
   .btn-solid {
