@@ -1,0 +1,32 @@
+@layer components {
+  #site-navigation {
+    @apply transition-all duration-300 ease-in-out overflow-hidden max-h-0;
+
+    @media screen(xl) {
+      @apply overflow-visible max-h-max flex items-center;
+    }
+
+    .active & {
+      @apply overscroll-none overflow-auto max-h-[calc(100vh-132px)];
+      @media screen(xl) {
+        @apply overflow-visible max-h-max flex items-center;
+      }
+    }
+  }
+
+  [id^="nav-panel-"] {
+    @apply transition-all opacity-0 duration-300 ease-in-out overflow-hidden max-h-0;
+
+    @media screen(xl) {
+      @apply absolute top-full;
+    }
+
+    &.active {
+      @apply max-h-[250px] opacity-100;
+
+      @media screen(xl) {
+        @apply overflow-visible;
+      }
+    }
+  }
+}

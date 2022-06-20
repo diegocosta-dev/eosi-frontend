@@ -14,6 +14,12 @@
       "options": {
         "singleQuote": false
       }
+    },
+    {
+      "files": "*.twig",
+      "options": {
+        "singleQuote": false
+      }
     }
   ],
   "plugins": ["./node_modules/prettier-plugin-twig-melody"]
