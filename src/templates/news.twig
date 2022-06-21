@@ -1,9 +1,49 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      News Page
-    </h1>
+{% set news = [
+  {
+    date: 'Feb 20, 2022',
+    title: 'Axius Water 2020 Sustainability Overview',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    link: '#'
+  },
+  {
+    date: 'Feb 20, 2022',
+    title: 'Axius Water 2020 Sustainability Overview',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    link: '#'
+  },
+  {
+    date: 'Feb 20, 2022',
+    title: 'Axius Water 2020 Sustainability Overview',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    link: '#'
+  },
+  {
+    date: 'Feb 20, 2022',
+    title: 'Axius Water 2020 Sustainability Overview',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    link: '#'
+  }
+] %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'News & Press',
+    intro: 'News, updates and press about EOSi and other related industry happenings. Join our email newsletter to get the latest news right in your inbox.'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class='flex flex-col gap-8'>
+    {% include "_blocks/_entry_posts.twig" with {
+      blk: {
+        posts: news
+      }
+    } %}
   </section>
+{% endblock %}
+
+{% block pageFooter %}
+  {% include '_partials/_cta.twig' %}
 {% endblock %}

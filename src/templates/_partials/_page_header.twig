@@ -1,13 +1,15 @@
 {% if title is defined and title %}
-  <div class="lg:pt-[30px]">
-    <h1 class="h1">
-      {{ title }}
-    </h1>
+  <div class="redactor flex flex-col gap-4 py-[30px] lg:py-[32px]">
+    {% include "_partials/_heading.twig" with {
+      text: title,
+      htag: 'h1'
+    } %}
 
     {% if intro is defined and intro %}
-      <h4 class="py-4 font-light text-gray-700 h4">
+      <p class="lg:w-2/3 font-light text-[24px] leading-[31px] text-gray-700">
         {{ intro }}
-      </h4>
+      </p>
     {% endif %}
   </div>
 {% endif %}
+

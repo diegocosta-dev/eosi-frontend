@@ -1,0 +1,13 @@
+{% if heading is defined and heading %}
+  <details>
+    <summary>
+      {{ heading }}
+    </summary>
+    {% if contents is defined and contents %}
+      <div class='accordion-content'>
+        {{ contents }}
+      </div>
+    {% endif %}
+  </details>
+{% endif %}
+
