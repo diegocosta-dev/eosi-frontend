@@ -51,7 +51,7 @@
 
   .p,
   .redactor p {
-    @apply text-[18px] leading-[25.2px] font-normal lg:text-[22px] lg:leading-[36px];
+    @apply text-[18px] leading-[25.2px] font-normal lg:text-[22px] lg:leading-[36px] text-gray-700;
   }
 
   .ul,
@@ -60,5 +60,14 @@
 
   .ol,
   .redactor ol {
+  }
+
+  .li,
+  .redactor li {
+    @apply flex items-center before:content-['\2022'] before:px-4 before:font-bold;
+  }
+  
+  .redactor hr {
+   @apply bg-gray-300 h-[1px] border-none mt-[12px];
   }
 }
