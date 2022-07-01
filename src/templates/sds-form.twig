@@ -48,17 +48,14 @@
               <form method="post" action='' class="grid lg:grid-cols-2 gap-x-12 gap-y-10">
                 <!-- set action -->
                 {% for field in formFields %}
-                {% include "_fields/_" ~ field.type ~ ".twig" with {
-                field: field
-                } %}
+                  {% include "_fields/_" ~ field.type ~ ".twig" with {
+                  field: field
+                  } %}
                 {% endfor %}
                 <div class='text-center'>
-                   <a href="sds-form-detail" class="btn-solid-blue"
-                      type="submit">
-                      <span class="text-lg font-semibold leading-[21.15px]">
-                        Request Files
-                      </span>
-                    </a>
+                   <a href="/sds-form-detail" class="btn-solid-blue text-lg font-semibold leading-[21.15px]">
+                      Request Files
+                  </a>
                 </div>
              </form>
           </div>

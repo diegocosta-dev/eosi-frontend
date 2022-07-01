@@ -68,37 +68,34 @@
   </section>
 {% endblock %}
 
-
 {% block pageSidebar %}
-  <div class='lg:max-w-[276px]'>
-    <div class="flex flex-col gap-12">
-      {% include '_partials/_sidebar_content.twig' with {
-        heading: 'Case Study',
-        coverPicture: 'img/facility.jpg',
-        content: {
-            text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
-            url: '#'
-          }
-      } %}
+  <div class="flex flex-col gap-12">
+    {% include '_partials/_sidebar_content.twig' with {
+      heading: 'Case Study',
+      coverPicture: 'img/facility.jpg',
+      content: {
+          text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
+          url: '#'
+        }
+    } %}
 
-      {% include '_partials/_sidebar_links.twig' with {
-        heading: 'Resources',
-        links: [
-          {
-            text: 'MicroC® 1000 Product Sheet',
-            url: '#'
-          },
-          {
-            text: 'MicroC® 1000 Safety Data Sheet (SDS)',
-            url: '#'
-          },
-          {
-            text: 'MicroC® 1100 Safety Data Sheet (SDS)',
-            url: '#'
-          }
-        ]
-      } %}
-    </div>
+    {% include '_partials/_sidebar_links.twig' with {
+      heading: 'Resources',
+      links: [
+        {
+          text: 'MicroC® 1000 Product Sheet',
+          url: '#'
+        },
+        {
+          text: 'MicroC® 1000 Safety Data Sheet (SDS)',
+          url: '#'
+        },
+        {
+          text: 'MicroC® 1100 Safety Data Sheet (SDS)',
+          url: '#'
+        }
+      ]
+    } %}
   </div>
 {% endblock %}
 
