@@ -1,0 +1,27 @@
+{% if formFields is defined and formFields %}
+  <div class='flex flex-col gap-6 bg-white px-[15px] py-[30px] md:px-[42px] rounded-md'>
+    {% if heading is defined and heading %}
+      <div>
+        <h3 class="font-bold text-2xl lg:text-[32px] lg:leading-[42px] text-gray-900 text-center">
+          {{ heading }}
+        </h3>
+      </div>
+    {% endif %}
+    <form method="post" action='' class="flex flex-col gap-6"> <!-- set action -->
+      {% for field in formFields %}
+        {% include "_fields/_" ~ field.type ~ ".twig" with {
+          field: field
+        } %}
+      {% endfor %}
+      <div class='text-center'>
+        <button class="btn-solid min-w-[200px]"
+          type="submit">
+            {{ buttonText|default('Submit Form') }}
+        </button> 
+        {% if textBottom is defined and textBottom %}
+          <p class='font-bold text-base leading-[48px] text-gray-900'>{{ textBottom }}</p>
+        {% endif %}
+      </div>
+    </form>
+  </div>
+{% endif %}

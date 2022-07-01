@@ -1,9 +1,73 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Case Study Form Page
-    </h1>
+{% set formFields = [
+    {
+      type: 'text',
+      name: 'name',
+      label: 'Name',
+      placeholder: 'Your Name',
+      value: 'Joe Smith',
+      required: true
+    },
+    {
+      type: 'tel',
+      name: 'phone',
+      label: 'Phone',
+      placeholder: '555-444-3333',
+      value: '555-444-3333',
+      required: true
+    },
+    {
+      type: 'email',
+      name: 'email',
+      label: 'Email',
+      placeholder: 'your@email.com',
+      value: 'info@mail.com',
+      required: true
+    },
+    {
+      type: 'text',
+      name: 'organization',
+      label: 'Organization',
+      placeholder: 'Acme, Inc.',
+      value: 'Acme, Inc.',
+      required: true
+    },
+    {
+      type: 'textarea',
+      name: 'message',
+      label: 'Message',
+      placeholder: 'Your Message',
+      value: 'Your Message',
+      required: false
+    }
+] %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'Beef Processing Facility',
+    intro: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals '
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class='grid gap-8 lg:grid-cols-2 lg:gap-[132px] pb-[96px]'>
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: '
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        '
+      }
+    } %}
+
+    {% include "_partials/_form.twig" with {
+      heading: 'Request Case Study',
+      buttonText: 'Request Case Study',
+      formFields: formFields,
+    } %}
   </section>
+{% endblock %}
+
+{% block pageFooter %}
 {% endblock %}
