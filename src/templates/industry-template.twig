@@ -1,68 +1,91 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
+{% set markets = [
+  {
+    title: 'Meat & Poultry Processing',
+    slug: 'meat-poultry',
+    content: '<p>EOSi’s MicroC® products are uniquely suited for use in biological processes that help remove nitrogen from wastewater. With wastewater treatment plants increasingly required by state and federal regulatory agencies to reduce the amount of nitrogen discharged into sensitive watersheds, EOSi offers services that help customers assess, develop, implement and update their compliance strategy for nitrogen removal programs.</p>
+    <p>EOSi’s goal is to maximize nitrogen and phosphorus removal from existing biological treatment systems, preferably through operational improvements instead of capital investments. If a processing plant needs to install new or upgrade existing wastewater treatment systems, EOSi can perform bench-scale treatability studies, modeling and simulations, and equipment selection and procurement for the supplemental carbon program. </p>
+    '
+  },
+  {
+    title: 'Power Generation',
+    slug: 'power-generation',
+    content: '<p>EOSi helps coal-fired power plant operators develop compliance strategies for pending nitrate and selenium limits in wastewater resulting from flue gas desulfurization (FGD) processes. MicroC® supplemental carbon sources provide a consistent, readily available source of food and energy to support the microbial populations needed for biological treatment of nitrate, nitrite and selenium in FGD wastewater. </p>
+    <p>MicroC® is also used for BOD augmentation to sustain the biomass during periods of low flows or loadings due to seasonal variations or maintenance shutdowns, and for establishing an acclimated biomass during the starting of new or upgraded biological treatment systems. EOSi can conduct nutrient deficiency analyses and, if necessary, design a custom MicroC® blend that includes essential microbial nutrients not found in the FGD wastewater.</p>
+  '
+  },
+  {
+    title: 'Petroleum Refineries',
+    slug: 'petroleum-refineries',
+    content: '<p>EOSi can help petroleum refineries develop compliance strategies in anticipation of regulatory changes expected to greatly reduce the amount of selenium that can be discharged to the environment. EOSi can conduct nutrient deficiency analyses and, if necessary, design a custom blend that includes essential microbial nutrients missing from the refinery wastewater.</p>
+    <p>MicroC® is also used for BOD augmentation to sustain the biomass during periods of low flows or loadings due to seasonal variations or maintenance shutdowns, and for establishing an acclimated biomass during the starting of new or upgraded biological treatment systems. EOSi can conduct nutrient deficiency analyses and, if necessary, design a custom treatment to sustain biomass during plant shutdown or startup.</p>
+  '
+  },
+  {
+    title: 'Mining and Extraction',
+    slug: 'mining-extraction',
+    content: '<p>EOSi can help mining companies develop compliance strategies in anticipation of regulatory changes expected to greatly reduce the amount of selenium that can be discharged to the environment, and offers optimization services that maximize the treatment effectiveness of existing biological systems that remove selenium, nitrate and sulfate from mining wastewater.</p>
+    <p>MicroC® supplemental carbon sources support and sustained the microbial populations needed for biological treatment of selenium, nitrate and sulfate, and are also used for BOD augmentation to help establish an acclimated biomass during the operational start of new or upgraded biological treatment systems. EOSi can conduct nutrient deficiency analyses and, if necessary, design a custom blend that includes essential microbial nutrients not found in the mining wastewater.</p>'
+  },
+  {
+    title: 'Landfill Operators',
+    slug: 'landfill-operators',
+    content: '<p>EOSi can help landfill operators remove ammonia and other nitrogen compounds from leachate, applying MicroC® carbon sources to support microbial populations needed for biological nitrogen removal (BNR) converting nitrogen compounds into harmless nitrogen gas. Leachate from older landfills may lack sufficient biodegradable organic compounds to support the biomass needed for nitrification in the aerobic zone, so a supplemental carbon source such as MicroC® that provides readily available food and energy will be needed, regardless of landfill age.</p>
+    <p>MicroC® can be custom blended to provide other essential microbial nutrients, such as phosphorus, that may not be present in sufficient quantities in the leachate. EOSi refines the MicroC® program as needed to accommodate changing leachate characteristics in landfills over time.</p>'
+  }
+] %}
+
 {% block pageHeader %}
-	{% include '_partials/_page_header.twig' with {
+  {% include '_partials/_page_header.twig' with {
     title: 'Industrial Markets',
     intro: '<h6 class="text-2xl font-light text-gray-700 lg:w-2/3">EOSi helps clients cost-effectively meet their contaminant removal and compliance objectives across an array of industrial markets.</h6>'
   } %}
 
-	<div class="flex flex-col md:flex-row rounded-md w-full divide-y md:divide-x divide-gray-100 text-center mb-[92px]">
-		{% for item in [
-      {
-        text: 'Meat & Poultry Processing',
-        url: '#meat-poultry'
-      },
-      {
-        text: 'Power Generation',
-        url: '#power-generation'
-      },
-      {
-        text: 'Petroleum Refineries',
-        url: '#petroleum-refineries'
-      },
-      {
-        text: 'Mining and Extraction',
-        url: '#mining-extraction'
-      },
-      {
-        text: 'Landfill Operators',
-        url: '#landfill-operators'
-      }
-    ] %}
-			<a href='{{ item.url }}' class="flex justify-center items-center flex-1 
-      p-[14px] lg:p-[28px] bg-white hover:bg-gray-50 text-[18px] p lg:h5">{{item.text}}</a>
-		{% endfor %}
+  <div class="flex flex-col md:flex-row rounded-md overflow-hidden w-full divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center mb-[92px]">
+    {% for market in markets %}
+      <a href="#{{ market.slug }}"
+        class="flex justify-center items-center flex-1 p-[14px] lg:p-[28px] bg-white hover:bg-gray-50 text-[18px] p lg:h5">
+        {{ market.title }}
+      </a>
+    {% endfor %}
   </div>
 {% endblock %}
 
-{% block pageContent %}
-  <section class="flex flex-col md:flex-row lg:gap-[132px]">
-    <div id='meat-poultry' class='flex-1'>
-      {% include "_blocks/_richText.twig" with {
-        blk: {
-          contents: '
-            <h2>Meat and Poultry Processing</h2>
-            <p>EOSi’s MicroC® products are uniquely suited for use in biological processes that help remove nitrogen from wastewater. With wastewater treatment plants increasingly required by state and federal regulatory agencies to reduce the amount of nitrogen discharged into sensitive watersheds, EOSi offers services that help customers assess, develop, implement and update their compliance strategy for nitrogen removal programs.</p>
-            <p>EOSi’s goal is to maximize nitrogen and phosphorus removal from existing biological treatment systems, preferably through operational improvements instead of capital investments. If a processing plant needs to install new or upgrade existing wastewater treatment systems, EOSi can perform bench-scale treatability studies, modeling and simulations, and equipment selection and procurement for the supplemental carbon program. </p>
-          '
-        }
-      } %}
-    </div>
-  </section>
-{% endblock %}
-
-{% block pageSidebar %}
-  <div class="lg:max-w-[276px] flex-1">
-    <div class="flex flex-col gap-12">
-      {% include '_partials/_sidebar_content.twig' with {
-      heading: 'Case Study',
-      coverPicture: 'img/facility.jpg',
-      content: {
-          text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
-          url: '#'
-        }
-      } %}
-    </div>
+{% block contentBody %}
+  <div class="flex flex-col gap-24">
+    {% for market in markets %}
+      {% embed '_partials/_pageContentEmbed.twig'
+        with { pageAnchor: market.slug }
+      %}
+        {% block mainPageContent %}
+          <section class="flex flex-col md:flex-row lg:gap-[132px]">
+            <div class="flex flex-col flex-1 gap-5">
+              <h2 class="h2">
+                {{ market.title }}
+              </h2>
+              {% include '_blocks/_richText.twig' with {
+                blk: { contents: market.content }
+              } %}
+            </div>
+          </section>
+        {% endblock %}
+        {% block pageSidebarContent %}
+          <div>
+            <div class="flex flex-col gap-12">
+              {% include '_partials/_sidebar_content.twig' with {
+                heading: 'Case Study',
+                coverPicture: 'img/facility.jpg',
+                content: {
+                  text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
+                  slug: ''
+                }
+              } %}
+            </div>
+          </div>
+        {% endblock %}
+      {% endembed %}
+    {% endfor %}
   </div>
 {% endblock %}
 

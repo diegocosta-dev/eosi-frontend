@@ -9,20 +9,23 @@
 					<div>
 						{% block pageHeader %}{% endblock %}
 					</div>
-					<div>
-						<div class="flex flex-col gap-6 lg:flex-row lg:gap-[132px]">
-							<div class="flex-1">
-								{% block pageContent %}{% endblock %}
-							</div>
-              {% set pSidebar = block('pageSidebar') %}
+					{% block contentBody %}
+
+            {% set pContent = block('pageContent') %}
+            {% set pSidebar = block('pageSidebar') %}
+
+            {% embed "_partials/_pageContentEmbed.twig" %}
+              {% block mainPageContent %}
+                {{ pContent }}
+              {% endblock %}
               {% if pSidebar %}
-                <div class='lg:max-w-[276px]'>
+                {% block pageSidebarContent %}
                   {{ pSidebar }}
-                </div>
+                {% endblock %}
               {% endif %}
-							{# <- this is an partial #}
-						</div>
-					</div>
+            {% endembed %}
+
+          {% endblock %}
 				</div>
 			</div>
 			{% block pageFooter %}{% endblock %}
