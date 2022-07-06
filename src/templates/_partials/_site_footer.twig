@@ -8,46 +8,40 @@
       <div class="flex flex-col gap-[30px] lg:gap-y-[60px] lg:flex-row lg:flex-wrap">
         <div class="flex-1">
           <div class="flex flex-col gap-8 lg:flex-row">
-            {% for n in [
+            {% for nav in [
               {
                 title: 'Resources',
-                items: [
-                  { content: 'SDS & Technical Documents' },
-                  { content: 'Case Studies' },
-                  { content: 'FAQS' }
+                links: [
+                  { text: 'SDS & Technical Documents', url: '/sds-form.html' },
+                  { text: 'Case Studies', url: '/case-studies.html' },
+                  { text: 'FAQS', url: '/faqs.html' }
                 ]
               },
               {
                 title: 'About Us',
-                items: [
-                  { content: 'Our Company' },
-                  { content: 'News & Press' },
-                  { content: 'Careers' }
+                links: [
+                  { text: 'Our Company', url: '/company.html' },
+                  { text: 'News & Press', url: '/news.html' },
+                  { text: 'Careers', url: '/careers.html' }
                 ]
               },
               {
                 title: 'Contact',
-                items: [
-                  { content: 'Message Us', link: '#' },
-                  { content: 'Case Studies', link: '#' },
-                  { content: 'FAQS', link: '#' }
+                links: [
+                  { text: '866-642-7621 ', url: 'tel:+18666427621 ' },
+                  { text: 'info@microc.com', url: 'mailto:info@microc.com' },
+                  { text: 'Send us a Message', url: '#' }
                 ]
               }
             ] %}
               <div class="flex-1 divide-y-2 divide-blue-700">
                 <div class="h4">
-                  {{ n.title }}
+                  {{ nav.title }}
                 </div>
                 <div class="flex flex-col mt-2">
-                  <a class="pt-4" href="{{ n.items[0].link }}">
-                    {{ n.items[0].content }}
-                  </a>
-                  <a class="pt-4" href="{{ n.items[1].link }}">
-                    {{ n.items[1].content }}
-                  </a>
-                  <a class="pt-4" href="{{ n.items[2].link }}">
-                    {{ n.items[2].content }}
-                  </a>
+                  {% for link in nav.links %}
+                    <a class="pt-4" href="{{ link.url }}">{{ link.text }}</a>
+                  {% endfor %}
                 </div>
               </div>
             {% endfor %}
@@ -56,12 +50,12 @@
 
         <div class="lg:w-full lg:order-last">
           <div class="flex flex-col gap-3 lg:flex-row">
-            {% for c in [
-              { content: 'Privacy Policy' },
-              { content: 'Accessibility Statement' },
-              { content: 'Website by Dative' }
+            {% for nav in [
+              { text: 'Privacy Policy' },
+              { text: 'Accessibility Statement' },
+              { text: 'Website by Dative' }
             ] %}
-              <a href="#" class="text-sm text-blue-300">{{ c.content }}</a>
+              <a href="#" class="text-sm text-blue-300">{{ nav.text }}</a>
             {% endfor %}
           </div>
         </div>
