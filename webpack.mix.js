@@ -24,18 +24,18 @@ mix.postCss('src/css/app.css', 'css')
 mix.copyDirectory('src/img/**', 'public/img')
 mix.copyDirectory('static/**', 'public')
 
-mix.criticalCss({
-  enabled: false,
-  paths: {
-    base: 'https://localhost:3030',
-    templates: './public/_criticalcss/',
-    suffix: '_critical.min'
-  },
-  urls: [{ url: '/', template: 'index' }],
-  options: {
-    minify: true
-  }
-})
+// mix.criticalCss({
+//   enabled: false,
+//   paths: {
+//     base: 'https://localhost:3030',
+//     templates: './public/_criticalcss/',
+//     suffix: '_critical.min'
+//   },
+//   urls: [{ url: '/', template: 'index' }],
+//   options: {
+//     minify: true
+//   }
+// })
 
 if (!mix.inProduction()) {
   mix.sourceMaps()
