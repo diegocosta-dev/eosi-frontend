@@ -1,22 +1,58 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
-
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
-    title: 'Pardot',
+    title: 'Schedule a Call',
+    intro: 'Learn how our proven process can help your meet and maintain your wastewater treatment goals consistently and cost-effectively.'
   } %}
 {% endblock %}
 
 {% block pageContent %}
-  <section class='flex flex-col gap-[48px]'>
+  <section class='grid gap-8 lg:grid-cols-2 lg:gap-[132px] pt-[32px] pb-[96px]'>
+    <div class="mx-auto">
+      <ul class="flex flex-col gap-12">
+        {% for li in [
+          {
+            title: 'Achieve Compliance',
+            contents: 'Leverage our experience in ever-changing permit requirements and regulations.'
+          },
+          {
+            title: 'Minimize Operational Risk',
+            contents: 'Reduce your risk with consistent on-time delivery and premium product quality.'
+          },
+          {
+            title: 'Optimize Removal Costs',
+            contents: 'Take the guesswork out of dosing and cut cost-per-pound of nutrients removed.'
+          }
+        ] %}
+          <li class="flex flex-row gap-6">
+            <div class="li-check"></div>
+            <div class="flex flex-col gap-2">
+              <p class="text-2xl font-bold leading-9 lg:text-[32px] lg:leading-[42px] lg:font-extrabold">
+                {{ li.title }}
+              </p>
+              <p class="text-lg leading-6 text-gray-700 lg:text-[22px] lg:leading-[36px]">
+                {{ li.contents }}
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-      <iframe src="https://go.microc.com/l/897151/2022-06-17/9zw88"
+
+      <div class='flex flex-col gap-6 bg-white px-[15px] py-[30px] md:px-[42px] rounded-md'>
+        <iframe src="https://go.microc.com/l/897151/2022-06-17/9zw88"
         width="100%"
         height="500"
         type="text/html"
         frameborder="0"
         allowTransparency="true"
         style="border: 0"></iframe>
+      </div>
 
   </section>
+{% endblock %}
+
+{% block pageFooter %}
 {% endblock %}
