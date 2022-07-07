@@ -21,6 +21,7 @@ mix.ts('src/js/carousel.ts', 'js')
 mix.ts('src/js/utils/lazysizes-wrapper.ts', 'js')
 
 mix.postCss('src/css/app.css', 'css')
+mix.postCss('src/css/pardot-form.css', 'css')
 
 mix.copyDirectory('src/img/**', 'public/img')
 mix.copyDirectory('static/**', 'public')

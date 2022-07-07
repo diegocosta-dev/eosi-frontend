@@ -1,0 +1,61 @@
+body {
+  font-family: "Public Sans", sans-serif;
+}
+
+@layer components {
+  .form {
+    @apply max-w-screen-sm mx-auto flex flex-col gap-4;
+  }
+
+  .alert {
+    @apply bg-gray-300 p-2 border-2 border-gray-500 rounded;
+
+    &-errors {
+      @apply bg-red border-red text-white;
+    }
+  }
+
+  input[type="submit"] {
+    @apply btn-solid min-w-[200px];
+  }
+
+  .form-field {
+    @apply flex flex-col gap-[3px];
+
+    label {
+      @apply flex flex-col gap-[3px];
+
+      span {
+        @apply font-semibold text-base leading-[19px];
+      }
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      @apply block bg-white rounded border-gray-300 p-[9px] w-full disabled:bg-gray-100 disabled:border-gray-300;
+    }
+
+    &.error {
+      label {
+        span {
+          @apply text-red;
+        }
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        @apply border-red bg-red/10;
+      }
+    }
+
+    p.info {
+      @apply text-gray-700 text-sm;
+    }
+
+    p.error {
+      @apply text-red text-sm;
+    }
+  }
+}

@@ -1,5 +1,10 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
+{% block headContent %}
+  {{ parent() }}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+{% endblock headContent %}
+
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
     title: 'Schedule a Call',
@@ -42,15 +47,12 @@
 
 
       <div class='flex flex-col gap-6 bg-white px-[15px] py-[30px] md:px-[42px] rounded-md'>
-        <iframe src="https://go.microc.com/l/897151/2022-06-17/9zw88"
-        width="100%"
-        height="500"
-        type="text/html"
-        frameborder="0"
-        allowTransparency="true"
-        style="border: 0"></iframe>
+        <iframe id="pardot-iframe" src="https://go.microc.com/l/897151/2022-06-17/9zw88" width="100%" scrolling="no" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
       </div>
 
+      <script>
+        iFrameResize({ log: true }, '#pardot-iframe')
+      </script>
   </section>
 {% endblock %}
 

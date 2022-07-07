@@ -8,6 +8,7 @@
     "dev": "npm-run-all clean --parallel dev:*",
     "build:mix": "cross-env NODE_ENV=production npx mix --production",
     "build": "npm-run-all clean build:*",
+    "critical": "node ./critical.js",
     "lint": "npm run lint:ts && npm run lint:js",
     "lint:ts": "tsc --noEmit",
     "lint:js": "eslint './src/js/*.{js,ts}' --fix"
@@ -31,6 +32,7 @@
     "browser-sync": "^2.27.10",
     "browser-sync-webpack-plugin": "^2.3.0",
     "copy-webpack-plugin": "^10.2.4",
+    "critical": "^4.0.1",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "laravel-mix": "^6.0.49",
