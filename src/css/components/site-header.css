@@ -1,0 +1,19 @@
+header#site-header {
+  @apply sticky top-0 bg-white z-50;
+
+  &.headroom {
+    @apply will-change-transform transition-transform duration-200 ease-linear;
+
+    &--pinned {
+      @apply translate-y-0 shadow-nav-menu;
+
+      &.headroom--top {
+        @apply shadow-none;
+      }
+    }
+
+    &--unpinned {
+      @apply -translate-y-full;
+    }
+  }
+}

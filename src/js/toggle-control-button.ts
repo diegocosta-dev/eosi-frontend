@@ -135,6 +135,10 @@ const toggleControlButton = (() => {
 
   init('[data-toggle-control]')
 
-})();
+});
 
-export default toggleControlButton
+export {
+  toggleControlButton,
+  TOGGLE_CLOSE_EVENT,
+  TOGGLE_OPEN_EVENT
+}

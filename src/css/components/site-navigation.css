@@ -1,6 +1,6 @@
 @layer components {
   #site-navigation {
-    @apply transition-all duration-300 ease-in-out overflow-hidden max-h-0;
+    @apply absolute top-full inset-x-0 bg-white transition-all duration-300 ease-in-out overflow-hidden max-h-0 xl:relative;
 
     @media screen(xl) {
       @apply overflow-visible max-h-max flex items-center;
@@ -21,7 +21,8 @@
       @apply absolute top-full;
     }
 
-    &.active {
+    .headroom--pinned &.active,
+    .headroom--top &.active {
       @apply max-h-[250px] opacity-100;
 
       @media screen(xl) {

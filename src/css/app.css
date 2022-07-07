@@ -34,10 +34,11 @@
 @import "./components/typography.css";
 @import "./components/buttons.css";
 @import "./components/hamburger.css";
+@import "./components/site-header.css";
 @import "./components/site-navigation.css";
 @import "./components/accordion.css";
 @import "./components/icons.css";
-@import "./components//cta.css";
+@import "./components/cta.css";
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

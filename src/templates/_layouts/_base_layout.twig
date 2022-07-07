@@ -31,24 +31,19 @@
 {# -- Page body -- #}
 {% block bodyHtml %}
   {% include '_partials/_svg_symbols.svg.twig' %}
-  <div id="page-container" class="overflow-hidden leading-tight">
+  {# -- Info header, including _navbar.twig -- #}
+  {% block siteHeader %}{% endblock %}
+  <div id="page-container" class="leading-tight">
     <div id="component-container"></div>
     <div id="content-container">
-      {# -- Info header, including _navbar.twig -- #}
-      {% block siteHeader %}
-      {% endblock %}
-
       <main>
         {# -- Primary content block -- #}
-        {% block content %}
-
-        {% endblock %}
+        {% block content %}{% endblock %}
       </main>
     </div>
 
     {# -- Info footer -- #}
-    {% block siteFooter %}
-    {% endblock %}
+    {% block siteFooter %}{% endblock %}
 
     {# -- HTML Footer -- #}
     {% include '_partials/_global_footer.twig' %}
