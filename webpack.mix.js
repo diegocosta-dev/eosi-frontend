@@ -17,6 +17,7 @@ mix.twig('src/templates', 'public', {
 })
 
 mix.ts('src/js/app.ts', 'js')
+mix.ts('src/js/carousel.ts', 'js')
 mix.ts('src/js/utils/lazysizes-wrapper.ts', 'js')
 
 mix.postCss('src/css/app.css', 'css')

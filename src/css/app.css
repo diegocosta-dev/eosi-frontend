@@ -6,7 +6,7 @@
  * @Author: webrgp
  * @Date: 2022-04-28 16:07:33
  * @Last Modified by: webrgp
- * @Last Modified time: 2022-06-13 12:04:54
+ * @Last Modified time: 2022-07-06 23:18:03
  *
  */
 
@@ -37,6 +37,7 @@
 @import "./components/site-header.css";
 @import "./components/site-navigation.css";
 @import "./components/accordion.css";
+@import "./components/carousel.css";
 @import "./components/icons.css";
 @import "./components/cta.css";
 /**

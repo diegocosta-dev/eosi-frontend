@@ -8500,6 +8500,11 @@
   dependencies:
     "setimmediate" "^1.0.4"
 
+"tiny-slider@^2.9.4":
+  "integrity" "sha512-LAs2kldWcY+BqCKw4kxd4CMx2RhWrHyEePEsymlOIISTlOVkjfK40sSD7ay73eKXBLg/UkluAZpcfCstimHXew=="
+  "resolved" "https://registry.npmjs.org/tiny-slider/-/tiny-slider-2.9.4.tgz"
+  "version" "2.9.4"
+
 "to-arraybuffer@^1.0.0":
   "integrity" "sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M="
   "resolved" "https://registry.npmjs.org/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz"

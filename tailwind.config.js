@@ -46,7 +46,8 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        'nav-menu': '0 15px 12px 0 rgb(0 0 0 / 0.05);'
+        'nav-menu': '0 15px 12px 0 rgb(0 0 0 / 0.05);',
+        'biggie': '0 10px 70px 0 rgb(0 0 0 / 0.04);',
       },
     },
   },

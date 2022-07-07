@@ -1,0 +1,80 @@
+{% set slides = [
+  {
+    title: 'Assess',
+    icon: 'svg-icon-clipboard',
+    picture: '/img/assess.jpg',
+    content: '<p>EOSi helps potential MicroC® customers develop and implement structured evaluation protocols to determine which MicroC products and Nitrack Program treatment systems and services will best operationally and financially benefit their wastewater treatment system.</p>'
+  },
+  {
+    title: 'Implement',
+    icon: 'svg-icon-chart',
+    picture: '/img/implement.jpg',
+    content: "<p>EOSi helps select and install permanent equipment needed for chemical storage and feeding, sampling and monitoring, and alarms and controls, and implements a long-term supplemental carbon program using EOSi's full-service solution Nitrack® Program customized for your specific contaminant-removal industry needs.</p>"
+  },
+  {
+    title: 'Support',
+    icon: 'svg-icon-headset',
+    picture: '/img/support.jpg',
+    content: '<p>EOSi helps customers monitor, maintain, and optimize wastewater compliance to ensure the lowest cost-per-pound dosage, and provides ongoing technical support. EOSi tracks real-time program data at critical points to provide timely process control and troubleshooting guidance via monthly reports that include expert observations and recommendations.</p>'
+  }
+] %}
+
+<div id="nitrack-carousel" class="carousel">
+  <div class="carousel-icons">
+    <div class="relative block w-[215px] h-[223px] mx-auto">
+      <svg class="w-full h-full text-blue-300">
+        <use href="#svg-circled" />
+      </svg>
+      {% for slide in slides %}
+        <button type="button"
+          class="carousel-icon--item carousel-icon--item-{{ loop.index }}{{
+          loop.first
+            ? ' active'
+          }}">
+          <div class="relative w-full h-full">
+            <svg class="w-full h-full text-current">
+              <use href="#svg-polygon" />
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-1">
+              <svg class="max-w-[50px] max-h-[50px]">
+                <use href="#{{ slide.icon }}" />
+              </svg>
+              <span class="text-xs font-semibold text-white uppercase">
+                {{ slide.title }}
+              </span>
+            </div>
+          </div>
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="carousel-slides">
+    {% for slide in slides %}
+      <div class="bg-white rounded-lg">
+        <div class="p-[15px] pb-[50px] mx-[15px] md:mx-0 md:px-[30px] md:pt-[50px] md:pb-[80px]">
+          <div class="flex flex-col gap-3 max-w-[990px] mx-auto md:flex-row md:gap-[30px]">
+            <div class="md:flex-1 md:max-w-[378px]">
+              <img src="{{ slide.picture }}"
+                alt="{{ slide.title }}"
+                class="object-cover w-full rounded-md shadow-biggie" />
+            </div>
+            <div class="md:flex-1">
+              <div class="flex flex-col gap-2 md:gap-5">
+                <h2 class="h1">
+                  {{ slide.title }}
+                </h2>
+                <div class="p">
+                  {{ slide.content }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script type="module">
+  import '/js/carousel.js'; EOSiCarousel('#nitrack-carousel')
+</script>

@@ -1,0 +1,66 @@
+.tns-outer {
+  @apply relative;
+}
+
+.tns-controls {
+  @apply absolute inset-0 z-30 flex items-center justify-between pointer-events-none -mt-[50px];
+
+  button {
+    @apply pointer-events-auto;
+    svg {
+      @apply transition-all text-blue-500 w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px] hover:text-blue-700;
+    }
+
+    &[data-controls="prev"] {
+      @apply -ml-[15px] lg:-ml-[20px] xl:-ml-[25px];
+    }
+
+    &[data-controls="next"] {
+      @apply -mr-[15px] lg:-mr-[20px] xl:-mr-[25px];
+    }
+  }
+}
+
+.tns-nav {
+  @apply mt-9 flex items-center justify-center gap-4;
+
+  button {
+    @apply w-5 h-5 rounded-full bg-blue-300;
+
+    &.tns-nav-active {
+      @apply bg-blue-700;
+    }
+  }
+}
+
+.carousel {
+  @apply relative mt-[50px] mx-[15px];
+}
+
+.carousel-slides {
+  @apply relative bg-white rounded-lg shadow-biggie pt-28 z-20;
+}
+
+.carousel-icons {
+  @apply relative -mb-24 z-40;
+}
+
+.carousel-icon--item {
+  @apply transition-colors absolute text-blue-300 w-[128px] h-[146px];
+
+  &.active {
+    @apply text-blue-700;
+  }
+
+  &-1 {
+    @apply -top-[50px] mx-auto inset-x-0;
+  }
+
+  &-2 {
+    @apply bottom-[3px] -right-[28px];
+  }
+
+  &-3 {
+    @apply bottom-[3px] -left-[28px];
+  }
+}
