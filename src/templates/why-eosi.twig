@@ -74,20 +74,17 @@
       </div>
       <div class="redactor flex flex-col md:grid md:grid-cols-2 gap-[30px] flex-1">
         {% for item in [
-          { heading: '15+', text: 'Years of manufacturing and distributing.' },
+          { count: 15, text: 'Years of manufacturing and distributing.' },
           {
-            heading: '20+',
+            count: 20,
             text: 'Locations across North America to serve you quickly.'
           },
-          {
-            heading: '180+',
-            text: 'Million Pounds of MicroC products delivered.'
-          },
-          { heading: '10,000+', text: 'Customer deliveries worldwide.' }
+          { count: 180, text: 'Million Pounds of MicroC products delivered.' },
+          { count: 10000, text: 'Customer deliveries worldwide.' }
         ] %}
           <div>
-            <h3>
-              {{ item.heading }}
+            <h3 data-count-number="{{ item.count }}">
+              {{ item.count }}
             </h3>
             <p>
               {{ item.text }}
