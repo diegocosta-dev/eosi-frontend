@@ -5,14 +5,13 @@
     heading: 'Achieve Compliance',
     description: 'Leveraging EOSi’s extensive contaminant-removal experience and expertise helps reassess compliance strategies and implement operational changes needed to remedy out-of-compliance situations.',
     coverPicture: '/img/facility.jpg',
-    link: '#',
+    link: '#'
   },
   {
     heading: 'Minimize Operational Risk',
     description: 'Nitrack® Program remote monitoring ensures optimal feed rates, contaminant-removal safety, and overall program cost-effectiveness for critical process parameters and overall program performance.',
     coverPicture: '/img/cover-pc.jpg',
     link: '#'
-
   },
   {
     heading: 'Optimize Removal Costs',
@@ -23,34 +22,37 @@
 ] %}
 
 {% block pageHeader %}
-	{% include '_partials/_page_header.twig' with {
+  {% include '_partials/_page_header.twig' with {
     title: 'Nitrack® Services',
     intro: 'Automated solutions to cost-effectively enhance your nutrient-removal process and meet permit requirements.'
   } %}
 {% endblock %}
 
 {% block pageContent %}
-  <section class='flex flex-col gap-12'>
+  <section class="flex flex-col gap-12">
+    {% include '_partials/_carousel.twig' %}
 
-    {% include "_partials/_carousel.twig" %}
-
-    <h2 class='text-[44px] leading-[48px]'>Meet your permit limits <strong class='font-extrabold'>consistently</strong> and <strong class='font-extrabold'>effectively.</strong></h2>
-    <div class='grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
-				{% for card in cards %}
-					{% include "_partials/_card.twig" with {
-            heading: card.heading,
-            description: card.description,
-            coverPicture: card.coverPicture,
-            link: card.link
-          } %}
-				{% endfor %}
-			</div>
+    <h2 class="text-[44px] leading-[48px]">
+      Meet your permit limits <strong class="font-extrabold">
+        consistently
+      </strong> and <strong class="font-extrabold">effectively.</strong>
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+      {% for card in cards %}
+        {% include '_partials/_card.twig' with {
+          heading: card.heading,
+          description: card.description,
+          coverPicture: card.coverPicture,
+          link: card.link
+        } %}
+      {% endfor %}
+    </div>
   </section>
 {% endblock %}
 
-{% block pageSidebar %}{% endblock %}
+{% block pageSidebar %}
+{% endblock %}
 
 {% block pageFooter %}
   {% include '_partials/_cta.twig' %}
 {% endblock %}
-

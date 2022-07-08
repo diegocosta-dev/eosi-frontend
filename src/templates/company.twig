@@ -16,7 +16,7 @@
   {
     fullName: 'Jeffrey Prellberg',
     occupatio: 'Vice President, Sales & Marketing',
-    description: 'Jeff brings more than 30 years of water/wastewater treatment industry experience, including senior positions as Director of Global Service and Aftermarket and VP Municipal Business Development with Trojan Technologies, a Danaher company providing water and wastewater treatment technology and service solutions, and as part of the senior management team for Danaher’s USP Technologies business.',
+    description: 'Jeff brings more than 30 years of water/wastewater treatment industry experience, including senior positions as Director of Global Service and Aftermarket and VP Municipal Business Development with Trojan Technologies, a Danaher company providing water and wastewater treatment technology and service solutions, and as part of the senior management team for Danaher’s USP Technologies business.'
   },
   {
     fullName: 'Rob Keeling',
@@ -51,8 +51,8 @@
 {% endblock %}
 
 {% block pageContent %}
-  <section class='flex flex-col gap-12'>
-    {% include "_blocks/_richText.twig" with {
+  <section class="flex flex-col gap-12">
+    {% include '_blocks/_richText.twig' with {
       blk: {
         contents: '
           <p>Environmental Operating Solutions, Inc. (EOSi) provides biological contaminant-removal solutions, supplies, and technical services empowering water and wastewater treatment plant operators in their mission to deliver treated effluent water free of harmful nutrient pollution and chemical contaminants.</p>
@@ -61,20 +61,16 @@
       }
     } %}
 
-    {% include "_blocks/_richText.twig" with {
-      blk: {
-        contents: '<h3>Meet Our Leadership Team</h3>'
-      }
+    {% include '_blocks/_richText.twig' with {
+      blk: { contents: '<h3>Meet Our Leadership Team</h3>' }
     } %}
 
-    {% include "_blocks/_profiles.twig" with {
-      blk: {
-        profiles: leadership
-      }
+    {% include '_blocks/_profiles.twig' with {
+      blk: { profiles: leadership }
     } %}
   </section>
 {% endblock %}
 
 {% block pageFooter %}
-  {% include "_partials/_cta.twig" %}
+  {% include '_partials/_cta.twig' %}
 {% endblock %}

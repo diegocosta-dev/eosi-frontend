@@ -1,2 +1,12 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+public/
+node_modules/
+.husky/
+static/
+src/img/
 src/templates/pardot-form-template.twig
 src/templates/pardot-layout-template.twig

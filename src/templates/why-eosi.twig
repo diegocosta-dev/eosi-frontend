@@ -3,17 +3,17 @@
 {% set accordions = [
   {
     heading: 'Multiple packaging options',
-    contents: '<p>From small wastewater treatment facilities to large municipal plants, EOSi ensures flexible delivery of MicroC products — regardless of quantities or usage rates. MicroC is available packaged in quantities ranging from five-gallon pails, 55-gallon drums, 265-gallon totes, all the way up to 1000-4500-gallon tanker-truck bulk deliveries. Whatever your MicroC usage rate, EOSi can deliver packaging options and sizes to meet your needs.</p>' 
+    contents: '<p>From small wastewater treatment facilities to large municipal plants, EOSi ensures flexible delivery of MicroC products — regardless of quantities or usage rates. MicroC is available packaged in quantities ranging from five-gallon pails, 55-gallon drums, 265-gallon totes, all the way up to 1000-4500-gallon tanker-truck bulk deliveries. Whatever your MicroC usage rate, EOSi can deliver packaging options and sizes to meet your needs.</p>'
   },
   {
     heading: 'On-time delivery',
     contents: '<p>Order your MicroC® products confident that your shipment will arrive complete, on schedule, formulated as specified, and priced as originally agreed — without exceptions and excuses.</p>
-    <p>EOSi’s robust supply chain provides expansive supply redundancy vital to maintaining uninterrupted treatment plant operations. With 3.5 million gallons of dedicated bulk storage and dedicated rail transportation equipment supporting more than 20 manufacturing locations across the United States and internationally, EOSi reliably delivers your entire MicroC® order when, where, and how you want it.</p>'  },
+    <p>EOSi’s robust supply chain provides expansive supply redundancy vital to maintaining uninterrupted treatment plant operations. With 3.5 million gallons of dedicated bulk storage and dedicated rail transportation equipment supporting more than 20 manufacturing locations across the United States and internationally, EOSi reliably delivers your entire MicroC® order when, where, and how you want it.</p>'
+  },
   {
     heading: 'Quality Assurance & Control',
     contents: '<p>Deploy your MicroC® products assured of the top performance, exacting quality, and reliable consistency you expect from EOSi. Our multi-sourcing strategies, closed-loop manufacturing, and multilayer quality control of raw materials from procurement through finished product helps insulate customers from fluctuating market-price volatility, and assures the best-value product available on the market today. EOSi’s international reach enables quickly establishing new international manufacturing locations dedicated to supplying growing local demand for MicroC® products and servicing Nitrack® equipment.</p>'
-  },
-
+  }
 ] %}
 
 {% set cards = [
@@ -21,14 +21,13 @@
     heading: 'Empowering Clean Water',
     description: 'Environmental Operating Solutions, Inc. (EOSi) provides biological contaminant-removal solutions, supplies, and technical services empowering water and wastewater treatment plant operators in their mission to deliver treated effluent water free of harmful nutrient pollution and chemical contaminants.',
     coverPicture: '/img/empowering.jpg',
-    link: '#',
+    link: '#'
   },
   {
     heading: 'Deep Technical Expertise ',
     description: 'EOSi is the trusted partner, solution provider, reliable supplier, and technical expert to hundreds of water and wastewater treatment operators across North America benefiting from our technical leadership and our passion for understanding and meeting their changing needs.',
     coverPicture: '/img/technical.jpg',
     link: '#'
-
   },
   {
     heading: 'Dedicated to Sustainability',
@@ -38,20 +37,18 @@
   }
 ] %}
 
-
 {% block pageHeader %}
-	{% include '_partials/_page_header.twig' with {
+  {% include '_partials/_page_header.twig' with {
     title: 'Why Partner with EOSi?',
     intro: '<h6 class="text-2xl font-light text-gray-700 lg:w-2/3">We’ve helped more than 550 customers just like yours to protect and preserve our global water resources. Read our 2021 Sustainability Report.</h6>'
   } %}
-
 {% endblock %}
 
 {% block pageContent %}
-	<section class="flex flex-col gap-8">
-		<div class="flex flex-col lg:flex-row gap-[30px]">
-			<div class="flex-1 flex flex-col gap-[30px]">
-				{% include "_blocks/_richText.twig" with {
+  <section class="flex flex-col gap-8">
+    <div class="flex flex-col lg:flex-row gap-[30px]">
+      <div class="flex-1 flex flex-col gap-[30px]">
+        {% include '_blocks/_richText.twig' with {
           blk: {
             contents: '
               <h2>Delivering the right product — right on time.</h2>
@@ -59,32 +56,25 @@
             '
           }
         } %}
-				{% include "_blocks/_accordions.twig" with {
-          blk: {
-            accordions: accordions
-          }
+        {% include '_blocks/_accordions.twig' with {
+          blk: { accordions: accordions }
         } %}
-			</div>
-      <div class='flex-1'>
-				{% include "_blocks/_picture.twig" with {
-          blk: {
-            image: 'img/whyEosi.jpg',
-          }
-        } %}
-			</div>
-		</div>
-
-    <div class='flex flex-col md:items-center lg:flex-row gap-[30px] py-12 lg:py-24'>
-      <div class='relative flex items-center justify-center flex-1 w-full'>
-        {% include "_partials/_cover-map.svg.twig" %}
-        <a href="#" class='absolute btn-solid-blue'>See Our Locations</a>
       </div>
-      <div class='redactor flex flex-col md:grid md:grid-cols-2 gap-[30px] flex-1'>
+      <div class="flex-1">
+        {% include '_blocks/_picture.twig' with {
+          blk: { image: 'img/whyEosi.jpg' }
+        } %}
+      </div>
+    </div>
+
+    <div class="flex flex-col md:items-center lg:flex-row gap-[30px] py-12 lg:py-24">
+      <div class="relative flex items-center justify-center flex-1 w-full">
+        {% include '_partials/_cover-map.svg.twig' %}
+        <a href="#" class="absolute btn-solid-blue">See Our Locations</a>
+      </div>
+      <div class="redactor flex flex-col md:grid md:grid-cols-2 gap-[30px] flex-1">
         {% for item in [
-          {
-            heading: '15+',
-            text: 'Years of manufacturing and distributing.'
-          },
+          { heading: '15+', text: 'Years of manufacturing and distributing.' },
           {
             heading: '20+',
             text: 'Locations across North America to serve you quickly.'
@@ -93,42 +83,44 @@
             heading: '180+',
             text: 'Million Pounds of MicroC products delivered.'
           },
-          {
-            heading: '10,000+',
-            text: 'Customer deliveries worldwide.'
-          }
+          { heading: '10,000+', text: 'Customer deliveries worldwide.' }
         ] %}
           <div>
-            <h3>{{item.heading}}</h3>
-            <p>{{item.text}}</p>
+            <h3>
+              {{ item.heading }}
+            </h3>
+            <p>
+              {{ item.text }}
+            </p>
           </div>
         {% endfor %}
       </div>
     </div>
 
-		<div class="flex flex-col gap-12 ">
-			<div class="text-[44px]">
-				<strong>Your</strong>
-				mission – is
-				<strong>our</strong>
-				mission.
-			</div>
-			<div class='grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
-				{% for card in cards %}
-					{% include "_partials/_card.twig" with {
+    <div class="flex flex-col gap-12">
+      <div class="text-[44px]">
+        <strong>Your</strong>
+        mission – is
+        <strong>our</strong>
+        mission.
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+        {% for card in cards %}
+          {% include '_partials/_card.twig' with {
             heading: card.heading,
             description: card.description,
             coverPicture: card.coverPicture,
             link: card.link
           } %}
-				{% endfor %}
-			</div>
-			<button class="self-center px-8 py-4 btn-outline-blue w-fit">See Our 2021 Sustainability Report</button>
-
-		</div>
-	</section>
+        {% endfor %}
+      </div>
+      <button class="self-center px-8 py-4 btn-outline-blue w-fit">
+        See Our 2021 Sustainability Report
+      </button>
+    </div>
+  </section>
 {% endblock %}
 
 {% block pageFooter %}
-	{% include '_partials/_cta.twig' %}
+  {% include '_partials/_cta.twig' %}
 {% endblock %}

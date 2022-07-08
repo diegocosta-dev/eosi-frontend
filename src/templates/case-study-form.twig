@@ -1,41 +1,41 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
 {% set formFields = [
-    {
-      type: 'text',
-      name: 'name',
-      label: 'Name',
-      placeholder: 'Your Name',
-      required: true
-    },
-    {
-      type: 'tel',
-      name: 'phone',
-      label: 'Phone',
-      placeholder: '555-444-3333',
-      required: true
-    },
-    {
-      type: 'email',
-      name: 'email',
-      label: 'Email',
-      placeholder: 'your@email.com',
-      required: true
-    },
-    {
-      type: 'text',
-      name: 'organization',
-      label: 'Organization',
-      placeholder: 'Acme, Inc.',
-      required: true
-    },
-    {
-      type: 'textarea',
-      name: 'message',
-      label: 'Message',
-      placeholder: 'Your Message',
-      required: false
-    }
+  {
+    type: 'text',
+    name: 'name',
+    label: 'Name',
+    placeholder: 'Your Name',
+    required: true
+  },
+  {
+    type: 'tel',
+    name: 'phone',
+    label: 'Phone',
+    placeholder: '555-444-3333',
+    required: true
+  },
+  {
+    type: 'email',
+    name: 'email',
+    label: 'Email',
+    placeholder: 'your@email.com',
+    required: true
+  },
+  {
+    type: 'text',
+    name: 'organization',
+    label: 'Organization',
+    placeholder: 'Acme, Inc.',
+    required: true
+  },
+  {
+    type: 'textarea',
+    name: 'message',
+    label: 'Message',
+    placeholder: 'Your Message',
+    required: false
+  }
 ] %}
 
 {% block pageHeader %}
@@ -46,8 +46,8 @@
 {% endblock %}
 
 {% block pageContent %}
-  <section class='grid gap-8 lg:grid-cols-2 lg:gap-[132px] pb-[96px]'>
-    {% include "_blocks/_richText.twig" with {
+  <section class="grid gap-8 lg:grid-cols-2 lg:gap-[132px] pb-[96px]">
+    {% include '_blocks/_richText.twig' with {
       blk: {
         contents: '
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>
@@ -56,10 +56,10 @@
       }
     } %}
 
-    {% include "_partials/_form.twig" with {
+    {% include '_partials/_form.twig' with {
       heading: 'Request Case Study',
       buttonText: 'Request Case Study',
-      formFields: formFields,
+      formFields: formFields
     } %}
   </section>
 {% endblock %}

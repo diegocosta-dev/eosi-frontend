@@ -1,17 +1,17 @@
+{# prettier-ignore-start #}
 <div>
-  {% if pageAnchor is defined and pageAnchor %}
-  <a id="{{pageAnchor}}" class="invisible block relative -top-[36px] lg:-top-[96px]"></a>
-  {% endif %}
+	{% if pageAnchor is defined and pageAnchor %}
+		<a id="{{ pageAnchor }}" class="invisible block relative -top-[36px] lg:-top-[96px]"></a>
+	{% endif %}
 
-  <div class="flex flex-col gap-6 lg:flex-row lg:gap-[132px]">
-    <div class="flex-1">
-      {% block mainPageContent %}{% endblock %}
-    </div>
+	<div class="flex flex-col gap-6 lg:flex-row lg:gap-[132px]">
+		<div class="flex-1"> {% block mainPageContent %}{% endblock %}</div>
     {% set pSidebar = block('pageSidebarContent') %}
     {% if pSidebar %}
-      <div class='lg:max-w-[276px] flex-1'>
+      <div class="lg:max-w-[276px] flex-1">
         {{ pSidebar }}
       </div>
     {% endif %}
   </div>
 </div>
+{# prettier-ignore-end #}

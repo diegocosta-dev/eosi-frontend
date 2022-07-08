@@ -39,8 +39,8 @@
 {% endblock %}
 
 {% block pageContent %}
-  <section class='flex flex-col gap-8'>
-    {% include "_blocks/_richText.twig" with {
+  <section class="flex flex-col gap-8">
+    {% include '_blocks/_richText.twig' with {
       blk: {
         contents: '
           <h2>Product Overview</h2>
@@ -50,18 +50,14 @@
       }
     } %}
 
-    {% include "_blocks/_richText.twig" with {
-      blk: {
-        contents: '
+    {% include '_blocks/_richText.twig' with {
+      blk: { contents: '
           <h2>Benefits</h2>
-        '
-      }
+        ' }
     } %}
 
-    {% include "_blocks/_accordions.twig" with {
-      blk: {
-        accordions: accordions
-      }
+    {% include '_blocks/_accordions.twig' with {
+      blk: { accordions: accordions }
     } %}
   </section>
 {% endblock %}
@@ -72,31 +68,22 @@
       heading: 'Case Study',
       coverPicture: 'img/facility.jpg',
       content: {
-          text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
-          url: '#'
-        }
+        text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
+        url: '#'
+      }
     } %}
 
     {% include '_partials/_sidebar_links.twig' with {
       heading: 'Resources',
       links: [
-        {
-          text: 'MicroC® 1000 Product Sheet',
-          url: '#'
-        },
-        {
-          text: 'MicroC® 1000 Safety Data Sheet (SDS)',
-          url: '#'
-        },
-        {
-          text: 'MicroC® 1100 Safety Data Sheet (SDS)',
-          url: '#'
-        }
+        { text: 'MicroC® 1000 Product Sheet', url: '#' },
+        { text: 'MicroC® 1000 Safety Data Sheet (SDS)', url: '#' },
+        { text: 'MicroC® 1100 Safety Data Sheet (SDS)', url: '#' }
       ]
     } %}
   </div>
 {% endblock %}
 
 {% block pageFooter %}
-  {% include "_partials/_cta.twig" %}
+  {% include '_partials/_cta.twig' %}
 {% endblock %}

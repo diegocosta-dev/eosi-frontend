@@ -1,15 +1,15 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
 {% block pageHeader %}
-	{% include '_partials/_page_header.twig' with {
+  {% include '_partials/_page_header.twig' with {
     title: 'Nitrogen Removal',
     intro: '<h6 class="text-2xl font-light text-gray-700 lg:w-2/3">EOSi’s MicroC® products were originally developed to help wastewater treatment systems remove nitrogen.</h6>'
   } %}
 {% endblock %}
 
 {% block pageContent %}
-	<section class="flex flex-col gap-[30px]">
-		{% include "_blocks/_richText.twig" with {
+  <section class="flex flex-col gap-[30px]">
+    {% include '_blocks/_richText.twig' with {
       blk: {
         contents: '
           <h2>Product Overview</h2>
@@ -18,20 +18,20 @@
       }
     } %}
 
-		{% include "_blocks/_picture.twig" with {
+    {% include '_blocks/_picture.twig' with {
       blk: {
         image: 'img/river.jpg',
         text: 'Algal blooms caused by excessive Nitrogen.'
       }
     } %}
 
-		{% include "_blocks/_richText.twig" with {
+    {% include '_blocks/_richText.twig' with {
       blk: {
         contents: '<p>Nitrogen in drinking water also poses health risks to infants and pregnant women, particularly in agricultural areas where groundwater wells are the primary source of drinking water. Elevated concentrations of nitrogen in drinking water create nitrate compounds causing “blue baby syndrome” methemoglobinemia, a potentially fatal illness in which the nitrates reduce the oxygen-carrying capacity of the blood.</p>'
       }
     } %}
 
-		{% include "_blocks/_richText.twig" with {
+    {% include '_blocks/_richText.twig' with {
       blk: {
         contents: '
           <h2>How EOSi Can Help</h2>
@@ -42,42 +42,33 @@
         '
       }
     } %}
-	</section>
+  </section>
 {% endblock %}
 
 {% block pageSidebar %}
-	<div class='lg:max-w-[276px]'>
-		<div class="flex flex-col gap-12">
-			{% include '_partials/_sidebar_content.twig' with {
+  <div class="lg:max-w-[276px]">
+    <div class="flex flex-col gap-12">
+      {% include '_partials/_sidebar_content.twig' with {
         heading: 'Case Study',
         coverPicture: 'img/facility.jpg',
         content: {
-            text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
-            url: '#'
-          }
+          text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
+          url: '#'
+        }
       } %}
 
-			{% include '_partials/_sidebar_links.twig' with {
+      {% include '_partials/_sidebar_links.twig' with {
         heading: 'Resources',
         links: [
-          {
-            text: 'MicroC® 1000 Product Sheet',
-            url: '#'
-          },
-          {
-            text: 'MicroC® 1000 Safety Data Sheet (SDS)',
-            url: '#'
-          },
-          {
-            text: 'MicroC® 1100 Safety Data Sheet (SDS)',
-            url: '#'
-          }
+          { text: 'MicroC® 1000 Product Sheet', url: '#' },
+          { text: 'MicroC® 1000 Safety Data Sheet (SDS)', url: '#' },
+          { text: 'MicroC® 1100 Safety Data Sheet (SDS)', url: '#' }
         ]
       } %}
-		</div>
-	</div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block pageFooter %}
-	{% include '_partials/_cta.twig' %}
+  {% include '_partials/_cta.twig' %}
 {% endblock %}

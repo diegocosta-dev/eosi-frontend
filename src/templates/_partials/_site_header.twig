@@ -1,34 +1,34 @@
 {% set links = [
-{
-  text: 'MicroC® Products',
-  children: [
-    { text: 'Why Choose MicroC®?', link: '/microc.html' },
-    { text: 'MicroC® 1000', link: '/product-template.html' },
-    { text: 'MicroC® 2000', link: '/product-template.html' },
-    { text: 'MicroC® 3000', link: '/product-template.html' },
-    { text: 'MicroC® 4000', link: '/product-template.html' }
-  ]
-},
-{ text: 'Nitrack® Services', link: '/nitrack.html' },
-{
-  text: 'Contaminants Treated',
-  children: [
-    { text: 'Nitrogen', link: '/contaminant-template.html' },
-    { text: 'Phosphorus', link: '#' },
-    { text: 'BOD Addition', link: '#' },
-    { text: 'Selenium', link: '#' }
-  ]
-},
-{
-  text: 'Customers Served',
-  children: [
-    { text: 'Industrial', link: '/industry-template.html' },
-    { text: 'Municipal', link: '/industry-template.html' },
-    { text: 'Drinking Water', link: '/industry-template.html' },
-    { text: 'Groundwater Remediation', link: '/industry-template.html' }
-  ]
-},
-{ text: 'Why EOSi?', link:'/why-eosi.html' }
+  {
+    text: 'MicroC® Products',
+    children: [
+      { text: 'Why Choose MicroC®?', link: '/microc.html' },
+      { text: 'MicroC® 1000', link: '/product-template.html' },
+      { text: 'MicroC® 2000', link: '/product-template.html' },
+      { text: 'MicroC® 3000', link: '/product-template.html' },
+      { text: 'MicroC® 4000', link: '/product-template.html' }
+    ]
+  },
+  { text: 'Nitrack® Services', link: '/nitrack.html' },
+  {
+    text: 'Contaminants Treated',
+    children: [
+      { text: 'Nitrogen', link: '/contaminant-template.html' },
+      { text: 'Phosphorus', link: '#' },
+      { text: 'BOD Addition', link: '#' },
+      { text: 'Selenium', link: '#' }
+    ]
+  },
+  {
+    text: 'Customers Served',
+    children: [
+      { text: 'Industrial', link: '/industry-template.html' },
+      { text: 'Municipal', link: '/industry-template.html' },
+      { text: 'Drinking Water', link: '/industry-template.html' },
+      { text: 'Groundwater Remediation', link: '/industry-template.html' }
+    ]
+  },
+  { text: 'Why EOSi?', link: '/why-eosi.html' }
 ] %}
 
 <header id="site-header">
@@ -36,7 +36,9 @@
     <div class="flex items-center justify-between">
       <div>
         <a href="/" class="text-blue-700">
-          {% include '/_partials/_logo.svg.twig' %}
+          <svg class="w-[252px] h-[72px]">
+            <use href="#eosi-logo" />
+          </svg>
         </a>
       </div>
       <div class="xl:hidden">
@@ -59,20 +61,23 @@
           {% for item in links %}
             {% if item.children is defined %}
               <li class="relative flex flex-col">
-                <button
-                  aria-label="Menu"
+                <button aria-label="Menu"
                   data-toggle-control="nav-panel-{{ loop.index }}"
                   data-nav-group="navigation-dropdowns"
                   aria-expanded="false"
                   class="flex flex-row gap-[7px] items-center justify-between w-full font-normal text-lg leading-[25px] text-gray-900 xl:w-auto xl:font-semibold xl:text-[16px] xl:leading-[19px]">
-                  {{item.text}}
+                  {{ item.text }}
                   <span class="arrow-down-icon"></span>
                 </button>
                 <div id="nav-panel-{{ loop.index }}">
-                  <ul class="flex-col mt-[10px] bg-white xl:rounded-b-md xl:shadow-nav-menu xl:pb-[10px] xl:pl-[10px] xl:pr-[20px] border-l-[1px] border-l-blue-300 xl:border-none"> <!-- Active on clink -->
+                  <ul class="flex-col mt-[10px] bg-white xl:rounded-b-md xl:shadow-nav-menu xl:pb-[10px] xl:pl-[10px] xl:pr-[20px] border-l-[1px] border-l-blue-300 xl:border-none">
+                    <!-- Active on clink -->
                     {% for child in item.children %}
                       <li class="">
-                        <a class="block p-[10px] font-normal text-[18px] leading-[25px] text-blue-700 xl:whitespace-nowrap xl:text-[16px] xl:leading-[18px] xl:text-gray-900" href={{child.link}}>{{child.text}}</a>
+                        <a class="block p-[10px] font-normal text-[18px] leading-[25px] text-blue-700 xl:whitespace-nowrap xl:text-[16px] xl:leading-[18px] xl:text-gray-900"
+                          href="{{ child.link }}">
+                          {{ child.text }}
+                        </a>
                       </li>
                     {% endfor %}
                   </ul>
@@ -81,15 +86,20 @@
             {% else %}
               <li class="">
                 {% if item.link is defined and item.link %}
-                  <a href={{item.link}} class="font-normal text-[18px] leading-[140%] text-gray-900 xl:font-semibold xl:text-[16px] xl:leading-[19px]">
-                    {{item.text}}
+                  <a href="{{ item.link }}"
+                    class="font-normal text-[18px] leading-[140%] text-gray-900 xl:font-semibold xl:text-[16px] xl:leading-[19px]">
+                    {{ item.text }}
                   </a>
                 {% endif %}
               </li>
             {% endif %}
-
           {% endfor %}
-          <li><a href="/lead-form.html" class="flex btn-solid px-[clamp(calc(1.5rem-2px),1.771vw,calc(2.25rem-2px))]">Schedule a Call</a></li>
+          <li>
+            <a href="/lead-form.html"
+              class="flex btn-solid px-[clamp(calc(1.5rem-2px),1.771vw,calc(2.25rem-2px))]">
+              Schedule a Call
+            </a>
+          </li>
         </ul>
       </div>
     </div>

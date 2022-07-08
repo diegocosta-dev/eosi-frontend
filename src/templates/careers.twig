@@ -1,6 +1,5 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
-
 {% set careersPosts = [
   {
     date: 'Feb 20, 2022',
@@ -24,7 +23,7 @@
 {% endblock %}
 
 {% block pageContent %}
-  <section class='flex flex-col gap-8'>
+  <section class="flex flex-col gap-8">
     {% for post in careersPosts %}
       {% include '_partials/_post_item.twig' with {
         date: post.date,

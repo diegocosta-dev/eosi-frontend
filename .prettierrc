@@ -16,6 +16,12 @@
       }
     },
     {
+      "files": "*.html",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
       "files": "*.twig",
       "options": {
         "singleQuote": false

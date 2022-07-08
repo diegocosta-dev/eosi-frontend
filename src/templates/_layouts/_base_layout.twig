@@ -32,18 +32,21 @@
 {% block bodyHtml %}
   {% include '_partials/_svg_symbols.svg.twig' %}
   {# -- Info header, including _navbar.twig -- #}
-  {% block siteHeader %}{% endblock %}
+  {% block siteHeader %}
+  {% endblock %}
   <div id="page-container" class="leading-tight">
     <div id="component-container"></div>
     <div id="content-container">
       <main>
         {# -- Primary content block -- #}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
       </main>
     </div>
 
     {# -- Info footer -- #}
-    {% block siteFooter %}{% endblock %}
+    {% block siteFooter %}
+    {% endblock %}
 
     {# -- HTML Footer -- #}
     {% include '_partials/_global_footer.twig' %}
@@ -57,15 +60,14 @@
   <script src="{{ mix('/js/app.js') }}"></script>
 
   <!-- Ybug code start (https://ybug.io) -->
-  <script type='text/javascript'>
-  if (window.location.host === "eosi-frontend.netlify.app") {
-    (function() {
-      window.ybug_settings = {"id":"2jthgkzzyyyb1mp45m3r"};
-      var ybug = document.createElement('script'); ybug.type = 'text/javascript'; ybug.async = true;
-      ybug.src = 'https://widget.ybug.io/button/'+window.ybug_settings.id+'.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ybug, s);
-    })();
-  }
+  <script type="text/javascript">
+    if (window.location.host === "eosi-frontend.netlify.app") { (function() {
+    window.ybug_settings = {"id":"2jthgkzzyyyb1mp45m3r"}; var ybug =
+    document.createElement('script'); ybug.type = 'text/javascript'; ybug.async
+    = true; ybug.src =
+    'https://widget.ybug.io/button/'+window.ybug_settings.id+'.js'; var s =
+    document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ybug,
+    s); })(); }
   </script>
-<!-- Ybug code end -->
+  <!-- Ybug code end -->
 {% endblock %}

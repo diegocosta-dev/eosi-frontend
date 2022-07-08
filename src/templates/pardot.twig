@@ -2,8 +2,9 @@
 
 {% block headContent %}
   {{ parent() }}
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
-{% endblock headContent %}
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+{% endblock %}
 
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
@@ -13,7 +14,7 @@
 {% endblock %}
 
 {% block pageContent %}
-  <section class='grid gap-8 lg:grid-cols-2 lg:gap-[132px] pt-[32px] pb-[96px]'>
+  <section class="grid gap-8 lg:grid-cols-2 lg:gap-[132px] pt-[32px] pb-[96px]">
     <div class="mx-auto">
       <ul class="flex flex-col gap-12">
         {% for li in [
@@ -45,16 +46,23 @@
       </ul>
     </div>
 
+    <div class="flex flex-col gap-6 bg-white px-[15px] py-[30px] md:px-[42px] rounded-md">
+      <iframe id="pardot-iframe"
+        src="https://go.microc.com/l/897151/2022-06-17/9zw88"
+        width="100%"
+        scrolling="no"
+        type="text/html"
+        frameborder="0"
+        allowtransparency="true"
+        style="border: 0"></iframe>
+    </div>
 
-      <div class='flex flex-col gap-6 bg-white px-[15px] py-[30px] md:px-[42px] rounded-md'>
-        <iframe id="pardot-iframe" src="https://go.microc.com/l/897151/2022-06-17/9zw88" width="100%" scrolling="no" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
-      </div>
-
-      <script>
-        iFrameResize({ log: true }, '#pardot-iframe')
-      </script>
+    <script>
+      iFrameResize({ log: true }, '#pardot-iframe')
+    </script>
   </section>
 {% endblock %}
 
 {% block pageFooter %}
+
 {% endblock %}

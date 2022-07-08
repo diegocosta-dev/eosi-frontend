@@ -1,73 +1,78 @@
 <footer id="site-footer">
   <div class="bg-blue-900">
     <div class="flex flex-col text-white">
-      <div class='flex flex-col lg:gap-[120px] lg:flex-row lg:justify-between lg:items-center lg:p-[30px]'>
+      <div class="flex flex-col lg:gap-[120px] lg:flex-row lg:justify-between lg:items-center lg:p-[30px]">
         <div class="py-[30px] max-w-[249px] lg:max-w-[360px] mx-auto lg:mx-0 flex flex-col gap-6 items-center lg:items-start">
-          <a href="/" class='w-full'>{% include "_partials/_logo.svg.twig" %}</a>
-          <a href="#" class="text-center text-base leading-[22px] text-blue-300 lg:px-[50px]">53 Portside Drive Pocasset, MA 866-642-7621 • info@microc.com</a>
-          
-          <div class='flex flex-row gap-6 lg:mx-auto'>
-            <a href="#">{% include "_partials/_linkedin_icon.svg.twig" %}</a>
-            <a href="#">{% include "_partials/_email_icon.svg.twig" %}</a>
+          <a href="/" class="w-full">
+            <svg class="w-[252px] h-[72px]">
+              <use href="#eosi-logo" />
+            </svg>
+          </a>
+          <a href="#"
+            class="text-center text-base leading-[22px] text-blue-300 lg:px-[50px]">
+            53 Portside Drive Pocasset, MA 866-642-7621 • info@microc.com
+          </a>
+
+          <div class="flex flex-row gap-6 lg:mx-auto">
+            <a href="#">{% include '_partials/_linkedin_icon.svg.twig' %}</a>
+            <a href="#">{% include '_partials/_email_icon.svg.twig' %}</a>
           </div>
         </div>
 
         <div class="py-[30px] px-[15px] lg:p-0 flex flex-col flex-1 lg:flex-row gap-[30px] justify-between lg:gap-[120px]">
           {% for nav in [
-              {
-                title: 'Resources',
-                links: [
-                  { text: 'SDS & Technical Documents', url: '/sds-form.html' },
-                  { text: 'Case Studies', url: '/case-studies.html' },
-                  { text: 'FAQS', url: '/faqs.html' }
-                ]
-              },
-              {
-                title: 'About Us',
-                links: [
-                  { text: 'Our Company', url: '/company.html' },
-                  { text: 'News & Press', url: '/news.html' },
-                  { text: 'Careers', url: '/careers.html' }
-                ]
-              }
-            ] %}
-              <div class="flex-1 divide-y-2 divide-blue-700">
-                <div class="h4">
-                  {{ nav.title }}
-                </div>
-                <div class="flex flex-col mt-2">
-                  {% for link in nav.links %}
-                    <a class="pt-4" href="{{ link.url }}">{{ link.text }}</a>
-                  {% endfor %}
-                </div>
+            {
+              title: 'Resources',
+              links: [
+                { text: 'SDS & Technical Documents', url: '/sds-form.html' },
+                { text: 'Case Studies', url: '/case-studies.html' },
+                { text: 'FAQS', url: '/faqs.html' }
+              ]
+            },
+            {
+              title: 'About Us',
+              links: [
+                { text: 'Our Company', url: '/company.html' },
+                { text: 'News & Press', url: '/news.html' },
+                { text: 'Careers', url: '/careers.html' }
+              ]
+            }
+          ] %}
+            <div class="flex-1 divide-y-2 divide-blue-700">
+              <div class="h4">
+                {{ nav.title }}
               </div>
-            {% endfor %}
+              <div class="flex flex-col mt-2">
+                {% for link in nav.links %}
+                  <a class="pt-4" href="{{ link.url }}">{{ link.text }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
         </div>
       </div>
 
-        <div class='flex flex-col items-center py-[30px]'>
-          <img src="/img/axius_logo.png" alt="axius" class="max-w-[160px] lg:max-w-[170px]" />
-          <p class='text-[8px] lg:text-[10px] leading-[20px]'>An <span class='text-[#90AAD4]'>Axius Water</span> Company</p>
-        </div>
+      <div class="flex flex-col items-center py-[30px]">
+        <img src="/img/axius_logo.png"
+          alt="axius"
+          class="max-w-[160px] lg:max-w-[170px]" />
+        <p class="text-[8px] lg:text-[10px] leading-[20px]">
+          An <span class="text-[#90AAD4]">Axius Water</span> Company
+        </p>
+      </div>
 
-        <div class="flex flex-col gap-3 items-center pb-[30px] lg:flex-row justify-center">
-          {% for url in [
-            {
-              text: "Privacy Policy",
-              link: "#"
-            },
-            {
-              text: "Accessibility Statement",
-              link: "#"
-            },
-            {
-              text: "Website by Dative",
-              link: "https://hellodative.com/"
-            }
-          ] %}
-            <a href="{{ url.link }}" class='text-[14px] leading-[22px] text-blue-300'>{{ url.text }}</a>
-          {% endfor %}
-        </div>
+      <div class="flex flex-col gap-3 items-center pb-[30px] lg:flex-row justify-center">
+        {% for url in [
+          { text: 'Privacy Policy', link: '#' },
+          { text: 'Accessibility Statement', link: '#' },
+          { text: 'Website by Dative', link: 'https://hellodative.com/' }
+        ] %}
+          <a href="{{ url.link }}"
+            class="text-[14px] leading-[22px] text-blue-300">
+            {{ url.text }}
+          </a>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </footer>
