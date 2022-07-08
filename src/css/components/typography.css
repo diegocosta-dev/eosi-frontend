@@ -6,7 +6,7 @@
  * @Author: webrgp
  * @Date: 2022-04-28 16:07:33
  * @Last Modified by: webrgp
- * @Last Modified time: 2022-06-13 19:09:06
+ * @Last Modified time: 2022-07-08 15:23:03
  *
  */
 
@@ -49,6 +49,11 @@
     @apply text-[19px] leading-[26.6px] font-normal lg:text-[22px] lg:leading-[28.6px];
   }
 
+  .h6,
+  .redactor h6 {
+    @apply font-light text-[24px] leading-[31px];
+  }
+
   .p,
   .redactor p {
     @apply text-[18px] leading-[25.2px] font-normal lg:text-[22px] lg:leading-[36px] text-gray-700;
@@ -66,8 +71,8 @@
   .redactor li {
     @apply flex before:content-['\2022'] before:px-4 before:font-bold p;
   }
-  
+
   .redactor hr {
-   @apply bg-gray-300 h-[1px] border-none mt-[12px];
+    @apply bg-gray-300 h-[1px] border-none mt-[12px];
   }
 }
