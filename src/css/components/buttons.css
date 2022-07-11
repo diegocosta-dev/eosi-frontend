@@ -8,10 +8,6 @@
     border;
   }
 
-  .btn-compact {
-    @apply py-1 px-3;
-  }
-
   .btn-solid {
     @apply btn-base border-secondary bg-secondary text-white hover:bg-secondary/90 hover:border-secondary/90;
   }
@@ -26,5 +22,9 @@
 
   .btn-solid-blue {
     @apply btn-base border-blue-700 bg-blue-700 text-white hover:bg-blue-700/90 hover:border-blue-700/90;
+  }
+
+  .btn-compact {
+    @apply py-1 px-3;
   }
 }

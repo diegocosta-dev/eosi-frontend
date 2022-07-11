@@ -16,6 +16,7 @@ module.exports = {
       'lg': defaultTheme.screens['lg'],
       'narrow': '1194px',
       'xl': defaultTheme.screens['xl'],
+      'navxl': '1380px',
       'desktop': '1440px',
       '2xl': defaultTheme.screens['2xl'],
     },
